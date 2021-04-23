@@ -1,0 +1,55 @@
+# main.py
+import random
+number=[3,4,5,6,7,2,1,9,4,7,7,2]
+def partition(number,value):
+  lesser=[]
+  equal=[]
+  greater=[]
+  for i in range(len(number)):
+    if number[i]==value:
+      equal.append(number[i])
+    elif number[i]<value:
+      lesser.append(number[i])
+    elif number[i]>value:
+      greater.append(number[i])
+  return lesser, equal, greater
+  
+def quickSort(number):
+  item=len(number)
+  if item<=1:
+    return number
+  pivot=random.randint(0,len(number)-1)
+  pivot=number[pivot]
+  lesser,equal,greater=partition(number,pivot)
+  sortLess=quickSort(lesser)
+  sortGreat=quickSort(greater)
+  return sortLess+equal+sortGreat
+  
+print(quickSort(number))
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
